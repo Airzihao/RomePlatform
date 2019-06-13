@@ -25,4 +25,4 @@ class Neo4jImporter extends DataImporter{
 
 class JenaImporter extends DataImporter{
 
-}
+} 

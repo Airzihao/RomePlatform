@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4588fa48-6f0a-4b69-bce3-d8c05a4c0068" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/DataImporter.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/DataImporter.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/database.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/Layout/PhysicEngine.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/Layout/PhysicEngine.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/util/SettingReader.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/util/SettingReader.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/SettingReaderTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/SettingReaderTest.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,7 +31,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/DataImporter.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
+            <state relative-caret-position="468">
               <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
               <folding>
                 <element signature="e#31#85#0" expanded="true" />
@@ -43,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/util/Node.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+            <state relative-caret-position="414">
+              <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -52,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/scala/NodeTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+            <state relative-caret-position="288">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -61,8 +61,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/util/Edge.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="270">
+              <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -70,11 +70,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/Layout/PhysicEngine.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-              <folding>
-                <element signature="e#56#62#1" />
-              </folding>
+            <state relative-caret-position="270">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -91,8 +88,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/util/SettingReader.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="360">
+              <caret line="21" column="71" selection-start-line="21" selection-start-column="71" selection-end-line="21" selection-end-column="71" />
               <folding>
                 <element signature="e#35#62#0" expanded="true" />
               </folding>
@@ -103,8 +100,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/scala/SettingReaderTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+            <state relative-caret-position="180">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -137,15 +134,15 @@
         <option value="$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/translator.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/SettingReaderTest.java" />
         <option value="$PROJECT_DIR$/src/test/test.properties" />
-        <option value="$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/util/SettingReader.scala" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/DataImporter.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/Layout/PhysicEngine.scala" />
         <option value="$PROJECT_DIR$/src/test/database.properties" />
-        <option value="$PROJECT_DIR$/src/test/scala/SettingReaderTest.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/NodeTest.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/util/Node.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/util/Edge.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/SettingReaderTest.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/util/SettingReader.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/Layout/PhysicEngine.scala" />
       </list>
     </option>
   </component>
@@ -188,8 +185,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -258,12 +253,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560407791048" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../d3-force-3d" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560500189518" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -316,18 +313,22 @@
       <workItem from="1558702775938" duration="498000" />
       <workItem from="1560254847750" duration="4669000" />
       <workItem from="1560299094677" duration="677000" />
-      <workItem from="1560388119256" duration="8895000" />
+      <workItem from="1560388119256" duration="8953000" />
+      <workItem from="1560417705438" duration="884000" />
+      <workItem from="1560470932764" duration="4212000" />
+      <workItem from="1560749043792" duration="599000" />
+      <workItem from="1560863669203" duration="477000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14739000" />
+    <option name="totallyTimeSpent" value="20969000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16151386" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10501066" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -336,7 +337,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -348,11 +349,11 @@
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Maven" order="5" visible="true" weight="0.10660981" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Ant Build" order="4" visible="true" weight="0.15511727" />
+      <window_info anchor="right" id="Maven" order="5" weight="0.10660981" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" />
@@ -373,6 +374,10 @@
       </breakpoints>
     </breakpoint-manager>
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/scala/SettingReaderTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/test.properties" />
@@ -384,6 +389,7 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/LayoutEngine/PhysicEngine.scala" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -394,16 +400,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/translator.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/DataImporter.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
+        <state relative-caret-position="468">
           <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
           <folding>
             <element signature="e#31#85#0" expanded="true" />
@@ -411,10 +410,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/LayoutEngine/PhysicEngine.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/util/Node.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        <state relative-caret-position="414">
+          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/NodeTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
@@ -425,51 +431,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/SettingReaderTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/NodeTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/util/Edge.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/util/Node.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/util/SettingReader.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="360">
+          <caret line="21" column="71" selection-start-line="21" selection-start-column="71" selection-end-line="21" selection-end-column="71" />
           <folding>
             <element signature="e#35#62#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/SettingReaderTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/translator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/util/Edge.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/grapheco/RomePlatform/Layout/PhysicEngine.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#56#62#1" />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>

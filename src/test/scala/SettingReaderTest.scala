@@ -5,5 +5,6 @@ object SettingReaderTest {
     val settingReader = new SettingReader("./database.properties");
     println(settingReader.getProp("neo4j.boltUrl"))
     println(settingReader.getProp("communityField"))
+    println(settingReader.getProp("commueld"))
   }
 }

@@ -10,7 +10,7 @@ class SettingReader(filePath:String) {
     properties.load(new FileInputStream(path))
   }catch {
     case ex: FileNotFoundException =>{
-      "File not found: "+path
+      throw new FileNotFoundException("File not found: "+path)
     }
   }
 
@@ -19,7 +19,7 @@ class SettingReader(filePath:String) {
       properties.getProperty(propName).toString
     }catch {
       case ex: NullPointerException =>{
-        "The prop not found."
+        throw new NullPointerException(s"The property: ${propName}, is not found.")
       }
     }
   }

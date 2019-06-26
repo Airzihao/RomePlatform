@@ -23,26 +23,24 @@ class SpringSolver(physicBody: PhysicBody, conf: Map[String,Any]) extends Solver
 
   var springForce: Double = 0
 
-  def solve(): Unit ={
+  def _calculateSpringForce(node1: Node, node2: Node, distance: Double): Unit = {
 
   }
+
 }
 
 class RepulsionSolver(physicBody: PhysicBody, conf: Map[String,Any]) extends Solver(physicBody, conf: Map[String,Any]){
 
   //useful var
-
-
   var repulsingForce: Double = 0
 
+  val nodeDistance = conf.get("nodeDistance").get.asInstanceOf[Int]
 
-  val nodeDistance = conf.get("nodeDistance").asInstanceOf[Int]
   // approximation constants
   val a = (-2 / 3) / nodeDistance;
   val b = 4 / 3;
 
   def _calculateRepulsionForce(node1: Node,node2: Node, distance: Double): Unit = {
-    //make sure two nodes never 100% overlapping
 
 
     if (distance < 2 * nodeDistance) {
@@ -69,6 +67,8 @@ class RepulsionSolver(physicBody: PhysicBody, conf: Map[String,Any]) extends Sol
         dy = node2.py-node1.py
         dz = node2.pz-node1.pz
         distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+
+        //make sure two nodes never 100% overlapping
         if (distance == 0) {
           distance = 0.1 * Math.random();
           dx = distance;

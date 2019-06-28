@@ -18,11 +18,17 @@ class Node(nodeId: Long, props: Map[String, Any]) {
 
 
   def getProp(propName: String):Any = {
-    propMap.get(propName)
+    propMap.get(propName).get
   }
 
   def setProp(key:String, value: Any)= {
     propMap += (key -> value)
+  }
+
+  def randomPosition(): Unit ={
+    px = (new util.Random).nextInt(200)
+    py = (new util.Random).nextInt(200)
+    pz = (new util.Random).nextInt(200)
   }
 
 }

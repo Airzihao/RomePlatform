@@ -23,6 +23,18 @@ class SettingReader(filePath:String) {
       }
     }
   }
+  def getMap(): Map[String,Any] = {
+    var confMap: Map[String,Any] = Map[String,Any]()
+//    for(name <- properties.propertyNames()){
+//      confMap+=(name -> properties.getProperty(name))
+//    }
+    val iter = properties.propertyNames()
+    while(iter.hasMoreElements){
+      val name = iter.nextElement().asInstanceOf[String]
+      confMap +=(name -> properties.getProperty(name))
+    }
+    return confMap
+  }
 
 
 }

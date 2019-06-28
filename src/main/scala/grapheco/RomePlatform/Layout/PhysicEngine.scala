@@ -33,6 +33,7 @@ springForce: F=springFactor*d
  */
 class SpringSolver(physicBody: PhysicBody, conf: Map[String,Any]) extends Solver(physicBody, conf: Map[String,Any]){
 
+  //reus
   var dx : Double = 0
   var dy : Double = 0
   var dz : Double = 0
@@ -97,7 +98,7 @@ class RepulsionSolver(physicBody: PhysicBody, conf: Map[String,Any]) extends Sol
   var fz: Double = 0
   var distance : Double = 0
   var repulsingForce: Double = 0
-  val nodeDistance = conf.get("nodeDistance").get.asInstanceOf[Int]
+  val nodeDistance = if(conf.contains("nodeDistance")) 100 else conf.get("nodeDistance").get.asInstanceOf[Int]
   val repulsionFactor: Int = if(conf.contains("repulsionFactor")) conf.get("repulsionFactor").get.asInstanceOf[Int] else 225
 
   // approximation constants
@@ -105,25 +106,18 @@ class RepulsionSolver(physicBody: PhysicBody, conf: Map[String,Any]) extends Sol
   val b = 4 / 3;
 
   def _calculateRepulsionForce(node1: Node,node2: Node, distance: Double): Unit = {
-
-
     if (distance < 2 * nodeDistance) {
-//      if (distance < 0.5 * nodeDistance) {
-//        repulsingForce = 1.0;
-//      }
-//      else {
-//        repulsingForce = a * distance + b; // linear approx of  1 / (1 + Math.exp((distance / nodeDistance - 1) * steepness))
-//      }
-
       repulsingForce = repulsionFactor/distance;
       //get unit force value
       repulsingForce = repulsingForce / distance;
-
-      fx = dx * repulsingForce;
-      fy = dy * repulsingForce;
-      fz = dz * repulsingForce;
+    } else{ //The two nodes are far from each other.
+      repulsingForce = 0
     }
+    fx = dx * repulsingForce;
+    fy = dy * repulsingForce;
+    fz = dz * repulsingForce;
   }
+
   def solve(): Unit ={
     for (i <- 0 until nodeArray.length-1){
       val node1 = nodeArray(i)

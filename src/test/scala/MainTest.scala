@@ -14,7 +14,7 @@ object MainTest {
     layoutHandler.startSimulation()
     val exportConf = new SettingReader("D:\\GitSpace\\RomePlatform\\resource\\exporter.properties").getMap()
     val jsonExporter = new JsonExporter(physicBody,exportConf)
-    jsonExporter.outputTo()
+    jsonExporter.outputTo(exportConf.get("exportFilePath").get.toString)
 
 
   }

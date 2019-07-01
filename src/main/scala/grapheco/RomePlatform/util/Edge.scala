@@ -8,7 +8,7 @@ class Edge(fromId: Long, toId: Long, props: Map[String, Any]) {
   val weight = if(propMap.contains("weight")) propMap.get("weight") else 1
 
   def getProp(propName: String):Any = {
-    propMap.get(propName)
+    propMap.get(propName).get
   }
 
   def setProp(key:String, value: Any)= {

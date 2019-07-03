@@ -4,11 +4,6 @@ import java.io._
 
 import org.neo4j.driver.v1.{AuthTokens, GraphDatabase}
 import util.{Edge, Node, SettingReader}
-import java.util
-
-import com.google.gson.{Gson, GsonBuilder}
-
-import scala.collection.mutable
 import scala.io.Source
 import org.json.JSONArray
 import org.json.JSONObject
@@ -68,11 +63,9 @@ class JsonImporter(propFilePath: String) extends DataImporter{
   val setting = new SettingReader(propFilePath)
   val jsonPath = setting.getProp("jsonPath")
   val jsonStr = getJsonStr(jsonPath)
-  //var dataMap = new Gson().fromJson(jsonStr,Map.getClass)
   val jsonObject: JSONObject = new JSONObject(jsonStr)
   val nodesArray: JSONArray = jsonObject.get("nodes").asInstanceOf[JSONArray]
   val edgesArray: JSONArray = jsonObject.get("edges").asInstanceOf[JSONArray]
-
 
   def getJsonStr(filePath: String): String ={
     val jsonFile = Source.fromFile(filePath)

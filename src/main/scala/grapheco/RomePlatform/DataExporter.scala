@@ -15,7 +15,6 @@ abstract class DataExporter(physicBody: PhysicBody) {
 class JsonExporter(physicBody: PhysicBody, conf: Map[String,Any]) extends DataExporter(physicBody :PhysicBody){
 
   val title:String = conf.get("title").get.toString
-  //val targetFilePath = conf.get("targetFilePath").get.toString
   var nodes:JsonArray = new JsonArray()
   var links:JsonArray = new JsonArray()
 
@@ -53,16 +52,22 @@ class JsonExporter(physicBody: PhysicBody, conf: Map[String,Any]) extends DataEx
     var jo = new JsonObject
     jo.addProperty("id",node.id.toString)
     jo.addProperty("title",node.getProp(title).toString)
-    jo.addProperty("categories",node.getProp("categories").toString)
-    jo.addProperty("size", node.getProp("value").asInstanceOf[Int])
+    addCoor(node,jo)
+    //jo.addProperty("categories",node.getProp("categories").toString)
+    //jo.addProperty("size", node.getProp("value").asInstanceOf[Int])
     return jo
+  }
+  def addCoor(node:Node, jo:JsonObject): Unit ={
+    jo.addProperty("fx",node.px)
+    jo.addProperty("fy",node.py)
+    jo.addProperty("fz", node.pz)
   }
 
   def wrapEdge(edge: Edge): JsonObject = {
     var jo = new JsonObject
     jo.addProperty("source",edge.from.toString)
     jo.addProperty("target",edge.to.toString)
-    jo.addProperty("label",edge.getProp("name").toString)
+//    jo.addProperty("label",edge.getProp("name").toString)
     return jo
   }
 }

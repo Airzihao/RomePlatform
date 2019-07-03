@@ -16,6 +16,7 @@ class LayoutHandler(physicBody: PhysicBody) {
   def startSimulation(): Unit ={
     simulationFlag = true
     while (simulationFlag & epochCount<maxEpochs){
+      println(epochCount)
       updateShift()
       epochCount+=1
     }

@@ -3,13 +3,29 @@ package grapheco.RomePlatform
 import java.io.{BufferedWriter, File, FileWriter, PrintWriter}
 
 import com.google.gson.{Gson, GsonBuilder, JsonArray, JsonObject}
+import com.sun.tools.internal.jxc.ConfigReader
 import grapheco.RomePlatform.Layout.PhysicBody
-import grapheco.RomePlatform.util.{Edge, JsonUtils, Node}
+import grapheco.RomePlatform.util.{Edge, JsonUtils, Node, SettingReader}
+import org.neo4j.driver.v1._
 
 abstract class DataExporter(physicBody: PhysicBody) {
   //wrapNode
   //wrapEdge
   //outputTo
+}
+
+class Neo4jExporter(physicBody: PhysicBody, settingReader: SettingReader) extends DataExporter(physicBody: PhysicBody){
+  val _boltUrl = settingReader.getProp("boltUrl")
+  val _user = settingReader.getProp("user")
+  val _pwd = settingReader.getProp("pwd")
+
+  def export(): Unit ={
+    val driver = GraphDatabase.driver(_boltUrl,AuthTokens.basic(_user,_pwd))
+    val session = driver.session(AccessMode.WRITE)
+  }
+  def addNode(node: Node, session: Session): Unit ={
+
+  }
 }
 
 class JsonExporter(physicBody: PhysicBody, conf: Map[String,Any]) extends DataExporter(physicBody :PhysicBody){

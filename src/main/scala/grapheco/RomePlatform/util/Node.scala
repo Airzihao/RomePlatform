@@ -1,5 +1,7 @@
 package grapheco.RomePlatform.util
 
+import org.json.JSONArray
+
 import scala.Predef
 
 class Node(nodeId: Long, props: Map[String, Any]) {
@@ -23,6 +25,25 @@ class Node(nodeId: Long, props: Map[String, Any]) {
 
   def setProp(key:String, value: Any)= {
     propMap += (key -> value)
+  }
+  def getAllPropsAsString():String = {
+    var str = s"{id:$id"
+    for (elem <- propMap) {
+      val key = elem._1
+      val value = {
+        elem._2 match {
+          case l: Long => l
+          case i: Int => i
+          case d: Double => d
+          case a: Array[_] => a
+          case j: JSONArray => j
+          case o => "\""+o.toString+"\""
+        }
+      }
+
+      str+=(s",$key:$value")
+    }
+    str.+("}")
   }
 
   def randomPosition(): Unit ={

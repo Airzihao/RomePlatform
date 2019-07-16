@@ -30,8 +30,8 @@ class Neo4jImporter extends DataImporter{
   val _user = setting.getProp("neo4j.User")
   val _pwd = setting.getProp("neo4j.Password")
 
-
   val driver = GraphDatabase.driver(_url,AuthTokens.basic(_user, _pwd))
+
 
 
   //execute Cypher
@@ -65,7 +65,10 @@ class JsonImporter(propFilePath: String) extends DataImporter{
   val jsonStr = getJsonStr(jsonPath)
   val jsonObject: JSONObject = new JSONObject(jsonStr)
   val nodesArray: JSONArray = jsonObject.get("nodes").asInstanceOf[JSONArray]
-  val edgesArray: JSONArray = jsonObject.get("edges").asInstanceOf[JSONArray]
+  val edgesArray: JSONArray = {
+    if(jsonObject.has("edges"))  jsonObject.get("edges").asInstanceOf[JSONArray]
+    else jsonObject.get("links").asInstanceOf[JSONArray]
+  }
 
   def getJsonStr(filePath: String): String ={
     val jsonFile = Source.fromFile(filePath)

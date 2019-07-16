@@ -6,13 +6,13 @@ class Point(pointId: Long) {
   var y:Double = 0.0
   var z:Double = 0.0
 
-  def setXPosition(xp: _): Unit ={
+  def setXPosition(xp: Any): Unit ={
     x = xp.asInstanceOf[Double]
   }
-  def setYPosition(yp: _): Unit ={
+  def setYPosition(yp: Any): Unit ={
     y = yp.asInstanceOf[Double]
   }
-  def setZPosition(zp: _): Unit ={
+  def setZPosition(zp: Any): Unit ={
     z = zp.asInstanceOf[Double]
   }
 

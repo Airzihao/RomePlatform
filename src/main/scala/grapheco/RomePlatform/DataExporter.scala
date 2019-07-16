@@ -15,16 +15,36 @@ abstract class DataExporter(physicBody: PhysicBody) {
 }
 
 class Neo4jExporter(physicBody: PhysicBody, settingReader: SettingReader) extends DataExporter(physicBody: PhysicBody){
-  val _boltUrl = settingReader.getProp("boltUrl")
-  val _user = settingReader.getProp("user")
-  val _pwd = settingReader.getProp("pwd")
+  val _boltUrl = settingReader.getProp("neo4j.boltUrl")
+  val _user = settingReader.getProp("neo4j.user")
+  val _pwd = settingReader.getProp("neo4j.pwd")
 
   def export(): Unit ={
     val driver = GraphDatabase.driver(_boltUrl,AuthTokens.basic(_user,_pwd))
     val session = driver.session(AccessMode.WRITE)
+    var count = 0
+    //physicBody.nodeArr.foreach(node => addNode(node,session) )
+    physicBody.edgeArr.foreach(edge => addEdge(edge,session))
+    session.close()
+    driver.close()
   }
-  def addNode(node: Node, session: Session): Unit ={
 
+
+  def addNode(node: Node, session: Session): Unit ={
+    //TO DO : make it configable
+    val props = node.getAllPropsAsString()
+    val statement: Statement = new Statement(s"Merge(n:Test$props);")
+    session.run(statement)
+  }
+  def addEdge(edge: Edge, session: Session): Unit ={
+    val props = edge.getAllPropsAsString()
+    val fromId = edge.from
+    val toId = edge.to
+    println(fromId,toId,props)
+    val cypher = s"Match(n1) Where n1.id=$fromId With n1 Match(n2) Where n2.id=$toId Create (n1)-[r:TEdge$props]->(n2);"
+    println(cypher)
+    val statement: Statement = new Statement(cypher)
+    session.run(statement)
   }
 }
 

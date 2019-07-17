@@ -2,12 +2,14 @@ package grapheco.RomePlatform
 
 import java.io._
 
-import org.neo4j.driver.v1.{AuthTokens, GraphDatabase}
+import org.neo4j.driver.v1.{AuthTokens, GraphDatabase, Session}
 import util.{Edge, Node, SettingReader}
+
 import scala.io.Source
 import org.json.JSONArray
 import org.json.JSONObject
 
+import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
 
 
@@ -17,6 +19,8 @@ abstract class DataImporter {
 
 class Neo4jImporter extends DataImporter{
 
+
+  //lazy val nodeList: List[Node]
   //TO DO: implement this function
   override def wrapNode(): Node = {
     var props:Map[String,Any] = Map[String,Any]()
@@ -32,6 +36,9 @@ class Neo4jImporter extends DataImporter{
 
   val driver = GraphDatabase.driver(_url,AuthTokens.basic(_user, _pwd))
 
+  private def queryNodes(session: Session): Unit ={
+    session.run("MATCH(n) RETURN n")
+  }
 
 
   //execute Cypher
@@ -60,17 +67,17 @@ class JsonImporter(propFilePath: String) extends DataImporter{
     return node
   }
 
-  val setting = new SettingReader(propFilePath)
-  val jsonPath = setting.getProp("jsonPath")
-  val jsonStr = getJsonStr(jsonPath)
-  val jsonObject: JSONObject = new JSONObject(jsonStr)
-  val nodesArray: JSONArray = jsonObject.get("nodes").asInstanceOf[JSONArray]
-  val edgesArray: JSONArray = {
+  private val setting = new SettingReader(propFilePath)
+  private val jsonPath = setting.getProp("jsonPath")
+  private val jsonStr = getJsonStr(jsonPath)
+  private val jsonObject: JSONObject = new JSONObject(jsonStr)
+  private val nodesArray: JSONArray = jsonObject.get("nodes").asInstanceOf[JSONArray]
+  private val edgesArray: JSONArray = {
     if(jsonObject.has("edges"))  jsonObject.get("edges").asInstanceOf[JSONArray]
     else jsonObject.get("links").asInstanceOf[JSONArray]
   }
 
-  def getJsonStr(filePath: String): String ={
+  private def getJsonStr(filePath: String): String ={
     val jsonFile = Source.fromFile(filePath)
     return jsonFile.mkString
   }

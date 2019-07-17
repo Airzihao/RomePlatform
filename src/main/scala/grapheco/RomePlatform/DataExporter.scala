@@ -23,7 +23,7 @@ class Neo4jExporter(physicBody: PhysicBody, settingReader: SettingReader) extend
     val driver = GraphDatabase.driver(_boltUrl,AuthTokens.basic(_user,_pwd))
     val session = driver.session(AccessMode.WRITE)
     var count = 0
-    //physicBody.nodeArr.foreach(node => addNode(node,session) )
+    physicBody.nodeArr.foreach(node => addNode(node,session) )
     physicBody.edgeArr.foreach(edge => addEdge(edge,session))
     session.close()
     driver.close()

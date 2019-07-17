@@ -6,7 +6,7 @@ import scala.collection.mutable.ArrayBuffer
 import scala.io.Source
 
 
-class Person(pid: String, pName: String){
+class Person(pid: Long, pName: String){
   var value = 0
   val name = pName
   val id = pid
@@ -18,6 +18,7 @@ object ETLTest {
   //var personArrBuffer: ArrayBuffer[JsonObject] = ArrayBuffer[JsonObject]()
   var links = new JsonArray()
   val nodes = new JsonArray()
+  var pid = 0
 
   def main(args: Array[String]): Unit ={
     val jsonStr = getJsonStr("E:\\WorkSpace\\Dataset\\dbmovies.json")
@@ -38,15 +39,14 @@ object ETLTest {
       nodes.add(jsonObj)
     })
 
-
-    outputTo("E:\\WorkSpace\\Dataset\\movies.json")
-
+    outputTo("E:\\WorkSpace\\Dataset\\movies2.json")
 
   }
 
   def dealJsonObj(x:JsonObject): Unit ={
 
-    var pid = 0
+
+
     val node = new JsonObject
     val id = x.get("id").getAsString
     val title = x.get("title").getAsString
@@ -65,7 +65,7 @@ object ETLTest {
         link.addProperty("source",personMap.get(name).get.id)
         link.addProperty("target",id)
       }else{
-        personMap += (name -> new Person(pid.toString,name))
+        personMap += (name -> new Person(pid,name))
         link.addProperty("source",personMap.get(name).get.id)
         link.addProperty("target",id)
         pid +=1

@@ -2,7 +2,7 @@ package grapheco.RomePlatform.Layout
 
 import grapheco.RomePlatform.util.{Node, Point}
 
-class HairBall() {
+class  HairBall() {
 
   var nodeCount:Long = 0
   var edgeCount:Long = 0

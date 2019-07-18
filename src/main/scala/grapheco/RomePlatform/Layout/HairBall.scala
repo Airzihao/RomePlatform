@@ -4,6 +4,8 @@ import grapheco.RomePlatform.util.{Node, Point}
 
 class  HairBall() {
 
+  // TO DO: add support at the front-end
+
   var nodeCount:Long = 0
   var edgeCount:Long = 0
   var id:Long = 0
@@ -27,6 +29,8 @@ class  HairBall() {
   def setCenterPosition(px: Double, py: Double, pz: Double): Unit ={
     center.setPosition(px,py,pz)
   }
+
+  // may be of no need.
   def hairBallGenerator(nodeArr: Array[Node]): Unit ={
     // ultra parameter
     // means the count of points in 1 unit volume
